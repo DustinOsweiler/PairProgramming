@@ -169,10 +169,10 @@ int main()
 	linerepresentation(Test1);
 	linerepresentation(Test2);
 
-	Point p1{ 4, 4 };
-	Point p2{ 6, 8 };
-	Point p3{ 4, 9 };
-	Point p4{ 8, 3 };
+	p1 = { 4, 4 };
+	p2 = { 6, 8 };
+	p3 = { 4, 9 };
+	p4 = { 8, 3 };
 	Line Test1(p1, p2);
 	Line Test2(p3, p4);
 	Parallel(Test1, Test2) ? cout << "Yes\n" : cout << "No\n";

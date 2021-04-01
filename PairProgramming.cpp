@@ -29,19 +29,19 @@ public:
 	{
 	}
 
-	const Point &startPoint() const
+	const Point& startPoint() const
 	{
 		return p1;
 	}
-	Point &startPoint()
+	Point& startPoint()
 	{
 		return p1;
 	}
-	const Point &endPoint() const
+	const Point& endPoint() const
 	{
 		return p2;
 	}
-	Point &endPoint()
+	Point& endPoint()
 	{
 		return p2;
 	}
@@ -73,7 +73,7 @@ bool onSegment(Point p, Point b, Point r)
 int orient(Point p, Point b, Point r)
 {
 	int val = (b.y - p.y) * (r.x - b.x) -
-			  (b.x - p.x) * (r.y - b.y);
+		(b.x - p.x) * (r.y - b.y);
 	if (val == 0)
 	{
 		return 0; //colinear
@@ -145,19 +145,43 @@ void linerepresentation(Line l1)
 
 int main()
 {
-
-	Point x1 = {1, 1}, y1 = {10, 1};
-	Point x2 = {1, 2}, y2 = {10, 2};
+	// testing for intersection
+	Point x1 = { 1, 1 }, y1 = { 10, 1 };
+	Point x2 = { 1, 2 }, y2 = { 10, 2 };
 
 	doesIntersect(x1, y1, x2, y2) ? cout << "Yes\n" : cout << "No\n";
 
-	x1 = {10, 0}, y1 = {0, 10};
-	x2 = {0, 0}, y2 = {10, 10};
+	x1 = { 10, 0 }, y1 = { 0, 10 };
+	x2 = { 0, 0 }, y2 = { 10, 10 };
 	doesIntersect(x1, y1, x2, y2) ? cout << "Yes\n" : cout << "No\n";
 
-	x1 = {-5, -5}, y1 = {0, 0};
-	x2 = {1, 1}, y2 = {10, 10};
+	x1 = { -5, -5 }, y1 = { 0, 0 };
+	x2 = { 1, 1 }, y2 = { 10, 10 };
 	doesIntersect(x1, y1, x2, y2) ? cout << "Yes\n" : cout << "No\n";
 
 	return 0;
 }
+
+	Point p1(2, 4);
+	Point p2(6, 8);
+	Point p3(1, 3);
+	Point p4(3, 5;
+	Line Test1(p1, p2);
+	Line Test2(p3, p4);
+	Parallel(Test1, Test2) ? cout << "Yes\n" : cout << "No\n";
+	linerepresentation(Test1);
+	linerepresentation(Test2);
+
+	Point p1(4, 4);
+	Point p2(6, 8);
+	Point p3(4, 9);
+	Point p4(8, 3);
+	Line Test1(p1, p2);
+	Line Test2(p3, p4);
+	Parallel(Test1, Test2) ? cout << "Yes\n" : cout << "No\n";
+	linerepresentation(Test1);
+	linerepresentation(Test2);
+
+	return 0;
+}
+>>>>>> > Stashed changes

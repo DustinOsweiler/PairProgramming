@@ -53,13 +53,13 @@ double GetSlope(Line l1) {
 	double LineSlope = Y / X;
 }
 
-void Parallel(Line l1, Line l2) {
+bool Parallel(Line l1, Line l2) {
 	double Slope1 = GetSlope(l1);
 	double Slope2 = GetSlope(l2);
 	if (Slope1 == Slope2)
-		cout << "The two lines are parallel";
+		return true;
 	else
-		cout << "The two lines are not parallel";
+		return false;
 }
 
 int main() {

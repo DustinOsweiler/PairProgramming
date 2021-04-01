@@ -6,6 +6,7 @@ using namespace std;
 
 #define min(a, b) (((a) < (b)) ? (a) : (b))
 #define max(a, b) (((a) > (b)) ? (a) : (b))
+#define pdd pair<double, double>
 
 struct Point
 {
@@ -47,16 +48,24 @@ public:
 	}
 };
 
-int LengthOfLine(double x1, double y1, double x2, double y2)
+int LineFromPoints(pdd P, pdd B)
 {
-	// What this should do is find the length of the line segment between x and y coordinates
-	cin >> x1 >> y1;
-	cin >> x2 >> y2;
-	double s;
-	s = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-	cout << fixed << setprecision(3);
-	cout << s << endl;
-	return 0;
+	double a = B.second - P.second;
+	double b = P.first - B.first;
+	double c = a * (P.first) + b * (P.second);
+
+	if (b < 0)
+	{
+		cout << "The line passing through points P and Q "
+				"is: "
+			 << a << "x - " << b << "y = " << c << endl;
+	}
+	else
+	{
+		cout << "The line passing through points P and Q "
+				"is: "
+			 << a << "x + " << b << "y = " << c << endl;
+	}
 }
 
 // These 3 points p,b,r the function checks if point b lies one the line segment pr
@@ -145,7 +154,11 @@ void linerepresentation(Line l1)
 
 int main()
 {
- // testing for intersection
+	// Test to check Length of the line
+	pdd P = make_pair(3, 2);
+	pdd Q = make_pair(2, 6);
+	LineFromPoints(P, Q);
+	// testing for intersection
 	Point x1 = {1, 1}, y1 = {10, 1};
 	Point x2 = {1, 2}, y2 = {10, 2};
 

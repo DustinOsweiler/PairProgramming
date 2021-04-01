@@ -173,8 +173,8 @@ int main()
 	p2 = { 6, 8 };
 	p3 = { 4, 9 };
 	p4 = { 8, 3 };
-	Line Test1(p1, p2);
-	Line Test2(p3, p4);
+	Test1 = { p1, p2 };
+	Test2 = { p3, p4 };
 	Parallel(Test1, Test2) ? cout << "Yes\n" : cout << "No\n";
 	linerepresentation(Test1);
 	linerepresentation(Test2);

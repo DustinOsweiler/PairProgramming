@@ -79,7 +79,7 @@ bool onSegment(Point p, Point b, Point r)
 	return false;
 }
 
-int orient(Point p, Point b, Point r)
+double orient(Point p, Point b, Point r)
 {
 	int val = (b.y - p.y) * (r.x - b.x) -
 			  (b.x - p.x) * (r.y - b.y);
@@ -158,19 +158,51 @@ int main()
 	pdd P = make_pair(3, 2);
 	pdd Q = make_pair(2, 6);
 	LineFromPoints(P, Q);
-	// testing for intersection
-	Point x1 = {1, 1}, y1 = {10, 1};
-	Point x2 = {1, 2}, y2 = {10, 2};
 
+	Point p1{2, 4};
+	Point p2{6, 8};
+	pdd pOnce = make_pair(2, 4);
+	pdd pTwice = make_pair(6, 8);
+	LineFromPoints(pOnce, pTwice);
+	Point p3{1, 3};
+	Point p4{3, 5};
+	pdd pTres = make_pair(1, 3);
+	pdd pFour = make_pair(3, 5);
+	LineFromPoints(pTres, pFour);
+	onSegment({1, 3}, {2, 4}, {6, 8}) ? cout << "Yes\n" : cout << "No\n";
+	Line Test1(p1, p2);
+	Line Test2(p3, p4);
+	Parallel(Test1, Test2) ? cout << "Yes\n" : cout << "No\n";
+	linerepresentation(Test1);
+	linerepresentation(Test2);
+	Point x1{2, 4};
+	Point y1{6, 8};
+	Point x2{1, 3};
+	Point y2{3, 5};
 	doesIntersect(x1, y1, x2, y2) ? cout << "Yes\n" : cout << "No\n";
 
-	x1 = {10, 0}, y1 = {0, 10};
-	x2 = {0, 0}, y2 = {10, 10};
+	p1 = {4, 4};
+	p2 = {6, 8};
+	p3 = {4, 9};
+	p4 = {8, 3};
+	Test1 = {p1, p2};
+	Test2 = {p3, p4};
+	pOnce = make_pair(4, 4);
+	pTwice = make_pair(6, 8);
+	LineFromPoints(pOnce, pTwice);
+	p3 = {4, 9};
+	p4 = {8, 3};
+	pTres = make_pair(4, 9);
+	pFour = make_pair(8, 3);
+	LineFromPoints(pTres, pFour);
+	onSegment({4, 4}, {2, 3}, {6, 8}) ? cout << "Yes\n" : cout << "No\n";
+	Parallel(Test1, Test2) ? cout << "Yes\n" : cout << "No\n";
+	linerepresentation(Test1);
+	linerepresentation(Test2);
+	x1 = {4, 4};
+	y1 = {6, 8};
+	x2 = {4, 9};
+	y2 = {3, 5};
 	doesIntersect(x1, y1, x2, y2) ? cout << "Yes\n" : cout << "No\n";
-
-	x1 = {-5, -5}, y1 = {0, 0};
-	x2 = {1, 1}, y2 = {10, 10};
-	doesIntersect(x1, y1, x2, y2) ? cout << "Yes\n" : cout << "No\n";
-
 	return 0;
 }

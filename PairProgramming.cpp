@@ -159,26 +159,25 @@ int main()
 	x2 = { 1, 1 }, y2 = { 10, 10 };
 	doesIntersect(x1, y1, x2, y2) ? cout << "Yes\n" : cout << "No\n";
 
-	Point p1(2, 4);
-	Point p2(6, 8);
-	Point p3(1, 3);
-	Point p4(3, 5);
+	Point p1{ 2, 4 };
+	Point p2{ 6, 8 };
+	Point p3{ 1, 3 };
+	Point p4{ 3, 5 };
 	Line Test1(p1, p2);
 	Line Test2(p3, p4);
 	Parallel(Test1, Test2) ? cout << "Yes\n" : cout << "No\n";
 	linerepresentation(Test1);
 	linerepresentation(Test2);
 
-	Point p1(4, 4);
-	Point p2(6, 8);
-	Point p3(4, 9);
-	Point p4(8, 3);
+	Point p1{ 4, 4 };
+	Point p2{ 6, 8 };
+	Point p3{ 4, 9 };
+	Point p4{ 8, 3 };
 	Line Test1(p1, p2);
 	Line Test2(p3, p4);
 	Parallel(Test1, Test2) ? cout << "Yes\n" : cout << "No\n";
 	linerepresentation(Test1);
 	linerepresentation(Test2);
-
 	return 0;
 }
 >>>>>> > Stashed changes

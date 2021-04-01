@@ -62,10 +62,6 @@ void Parallel(Line l1, Line l2) {
 		cout << "The two lines are not parallel";
 }
 
-void GetLength(Line) {
-
-}
-
 int main() {
 	Line line;
 	line.startPoint() = Point(4, 2);
